@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crypto Mines</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Crypto Mines</h1>
+      <div class="balance">
+        <label>Số dư:</label>
+        <span id="balance">100.0000</span>
+        <button id="deposit">Nạp</button>
+        <button id="withdraw">Rút</button>
+      </div>
+    </header>
+
+    <section class="controls">
+      <div class="row">
+        <label>Kích thước:</label>
+        <select id="sizeSelect">
+          <option value="4">4 x 4</option>
+          <option value="5">5 x 5</option>
+          <option value="6">6 x 6</option>
+          <option value="8">8 x 8</option>
+          <option value="12">12 x 12</option>
+          <option value="30">30 x 30</option>
+        </select>
+
+        <label>Bombs:</label>
+        <input id="bombsInput" type="number" min="1" value="3" />
+
+        <label>Bet (TRX):</label>
+        <input id="betInput" type="number" min="0.0001" step="0.0001" value="1" />
+
+        <label>ClientSeed:</label>
+        <input id="clientSeed" type="text" placeholder="Nhập client seed..." />
+
+        <button id="startBtn">Bắt đầu</button>
+      </div>
+
+      <div class="row">
+        <label>Auto mode:</label>
+        <select id="autoModeSelect">
+          <option value="off">Off</option>
+          <option value="enjoy">Enjoy (0.05s mỗi ô)</option>
+          <option value="fast">Fast (mở tất cả)</option>
+        </select>
+
+        <label>Auto rounds trước refresh TRX:</label>
+        <input id="autoRounds" type="number" value="40" min="1" />
+      </div>
+    </section>
+
+    <section class="game">
+      <div id="meta">
+        <div>Game ID: <span id="gameId">-</span></div>
+        <div>Nonce: <span id="nonce">-</span></div>
+        <div>ServerSeed (public): <span id="serverSeed">-</span></div>
+        <div>Open pending: <span id="pendingCount">0</span></div>
+        <div>Opened: <span id="openedCount">0</span></div>
+        <div>Multiplier: x<span id="multiplier">0</span></div>
+      </div>
+
+      <div id="gridWrap"></div>
+
+      <div class="actions">
+        <button id="cashoutBtn" disabled>Cashout</button>
+        <button id="verifyBtn" disabled>Verify</button>
+      </div>
+
+      <div id="spinner" class="spinner hidden"></div>
+
+      <section id="historySection">
+        <h3>Lịch sử</h3>
+        <div id="historyList"></div>
+      </section>
+
+    </section>
+
+    <footer>
+      <small>Provably fair: serverSeed = TRX block hash + "2". Nonce tăng theo lượt chơi.</small>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
