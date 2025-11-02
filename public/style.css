@@ -1,0 +1,27 @@
+*{box-sizing:border-box}
+body{font-family:Inter, Roboto, Arial, sans-serif;background:linear-gradient(180deg,#061220,#052233);color:#e6eef8;margin:0;padding:20px}
+.app{max-width:1100px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+header h1{margin:0;font-size:26px}
+.balance{display:flex;gap:8px;align-items:center}
+.balance button{padding:6px 10px;border-radius:8px;border:none;background:#12b981;color:#01241b;cursor:pointer}
+.controls{margin-bottom:12px}
+.controls .row{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.controls label{font-size:14px}
+.controls input, .controls select{padding:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit}
+.game #meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+#gridWrap{display:grid;gap:6px;justify-content:center;background:rgba(0,0,0,0.12);padding:12px;border-radius:10px}
+.cell{width:36px;height:36px;border-radius:6px;background:linear-gradient(180deg,#123,#024);display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:700}
+.cell.opened{background:linear-gradient(180deg,#e6f7ff,#bfeeff);color:#032}
+.cell.bomb{background:linear-gradient(180deg,#ffdddd,#ffbbbb);color:#800}
+.actions{margin-top:12px;display:flex;gap:8px}
+button:disabled{opacity:0.5;cursor:not-allowed}
+.spinner{width:36px;height:36px;border-radius:50%;border:4px solid rgba(255,255,255,0.08);border-top-color:#12b981;animation:spin 1s linear infinite;margin-top:12px}
+.hidden{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+#historyList{margin-top:8px;max-height:200px;overflow:auto}
+.hrow{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between}
+.verify-grid{display:grid;gap:4px;background:rgba(0,0,0,0.08);padding:8px;border-radius:6px;max-width:100%}
+.verify-cell{width:18px;height:18px;border-radius:3px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;font-size:10px}
+.verify-cell.bomb{background:rgba(255,0,0,0.18)}
+.verify-cell.opened{background:rgba(0,255,0,0.12)}
